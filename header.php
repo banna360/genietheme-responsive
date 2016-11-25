@@ -6,7 +6,8 @@
  *
  * @package GenieTheme
  */
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -16,6 +17,7 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php wp_head(); ?>
+
 </head>
 
 <body <?php body_class(); ?>>
@@ -26,8 +28,16 @@
 	<header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
 		
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+		<?php
+         $titan = TitanFramework::getInstance( 'genietheme' );
+            $imageID = $titan->getOption( 'head_logo');
+            $imageSrc = $imageID;
+            if ( is_numeric( $imageID ) ) {
+               $imageAttachment = wp_get_attachment_image_src( $imageID,'FULL');
+                $imageSrc = $imageAttachment[0];
+           } 
+        ?>
+     <a href="<?php bloginfo('url');?>/"> <img src='<?php echo esc_url( $imageSrc ); ?>' /></a>
 		</div>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">

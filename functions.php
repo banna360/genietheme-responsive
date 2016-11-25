@@ -28,8 +28,7 @@ function genietheme_setup() {
 	 * If you're building a theme based on GenieTheme, use a find and replace
 	 * to change 'genietheme' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'genietheme', get_template_directory() . '/languages' );
-
+	
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
@@ -56,10 +55,11 @@ function genietheme_setup() {
 	/*
 	 * Enable support for Post Formats.
 	 * See http://codex.wordpress.org/Post_Formats
-	 */
+	if needed only activate
 	add_theme_support( 'post-formats', array(
 		'aside', 'image', 'video', 'quote', 'link',
 	) );
+	 */
 
 	
         
@@ -91,11 +91,10 @@ add_action( 'widgets_init', 'genietheme_widgets_init' );
 function genietheme_scripts() {
 	wp_enqueue_style( 'genietheme-style', get_stylesheet_uri() );
 wp_enqueue_style( 'genietheme-style-mobile', get_template_directory_uri().'/mobile.css');
-	wp_enqueue_script( 'genietheme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'genietheme-navigation', get_template_directory_uri() . '/js/scripts.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'genietheme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+
 	wp_enqueue_style( 'genietheme-style-boot', get_template_directory_uri().'/bootstrap/bootstrap.min.css');
-	wp_enqueue_style( 'genietheme-style-boottheme', get_template_directory_uri().'/bootstrap/bootstrap-theme.min.css');
 	wp_enqueue_script( 'genietheme-script', get_template_directory_uri().'/bootstrap/bootstrap.min.js');
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -120,16 +119,7 @@ require get_template_directory() . '/inc/template-tags.php';
  */
 require get_template_directory() . '/inc/extras.php';
 
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
 
-/**
- * Load Jetpack compatibility file.
- */
-
-require get_template_directory() . '/inc/jetpack.php';
 
 require_once( 'titan-framework/titan-framework-embedder.php' );
 
