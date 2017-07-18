@@ -13,7 +13,7 @@
 	<div class="container">
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-                    &copy; 2003-2014 - <?php bloginfo( 'name' ); ?>
+                    &copy; <?php echo date("Y"); ?> - <?php bloginfo( 'name' ); ?>
 			<span class="sep"> | </span>
 			<a href="http://coregenie.com" target="_blank">CMS Design and Development Expert USA - COREGENIE TECHNOLOGIES</a>
 		</div><!-- .site-info -->
