@@ -89,8 +89,7 @@ add_action( 'widgets_init', 'genietheme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function genietheme_scripts() {
-	wp_enqueue_style( 'genietheme-style', get_stylesheet_uri() );
-wp_enqueue_style( 'genietheme-style-mobile', get_template_directory_uri().'/mobile.css');
+	
 	wp_enqueue_script( 'genietheme-navigation', get_template_directory_uri() . '/js/scripts.js', array(), '20120206', true );
 
 
@@ -101,6 +100,8 @@ wp_enqueue_style( 'genietheme-style-mobile', get_template_directory_uri().'/mobi
 		wp_enqueue_script( 'comment-reply' );
 	}
 	wp_enqueue_script( 'jquery');
+	wp_enqueue_style( 'genietheme-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'genietheme-style-mobile', get_template_directory_uri().'/mobile.css');
 }
 add_action( 'wp_enqueue_scripts', 'genietheme_scripts' );
 
