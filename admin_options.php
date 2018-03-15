@@ -8,7 +8,9 @@
 
 require_once( 'titan-framework-checker.php' );
  
-add_action( 'tf_create_options', 'cg_theme_create_options' );
+
+//add_action( 'tf_create_options', 'cg_theme_create_options' ); 
+
 function cg_theme_create_options() {
 
 
@@ -72,15 +74,10 @@ function cg_theme_create_options() {
         'type' => 'save'
     ) );
     
-/* 
-
------------------------------
-# Meta box creation option #
------------------------------
-    $titan = TitanFramework::getInstance( 'genietheme' );
-$pageMetaBox = $titan->createMetaBox( array(
-    'name' => 'Additional Page Options',
-) );
+$titan = TitanFramework::getInstance( 'genietheme' );
+   $pageMetaBox = $titan->createMetaBox( array(
+       'name' => 'Additional Page Options',
+   ) );
 
  $pageMetaBox->createOption( array(
         'name' => 'FILES',
@@ -88,8 +85,6 @@ $pageMetaBox = $titan->createMetaBox( array(
         'type' => 'upload',
        
     ) );
-    */
- 
 }
 
 function get_titan_option($id){
