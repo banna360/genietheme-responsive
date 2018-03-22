@@ -111,3 +111,7 @@ require_once( 'titan-framework/titan-framework-embedder.php' );
 // Check whether the Titan Framework plugin is activated, and notify if it isn't
 
 require_once( 'admin_options.php' );
+
+// REMOVE EMOJI ICONS
+remove_action('wp_head', 'print_emoji_detection_script', 7);
+remove_action('wp_print_styles', 'print_emoji_styles');
