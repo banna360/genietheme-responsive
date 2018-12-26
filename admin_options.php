@@ -9,7 +9,7 @@
 require_once( 'titan-framework-checker.php' );
  
 
-//add_action( 'tf_create_options', 'cg_theme_create_options' ); 
+add_action( 'tf_create_options', 'cg_theme_create_options' ); 
 
 function cg_theme_create_options() {
 
